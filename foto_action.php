@@ -1,4 +1,5 @@
 <?php
+echo 'whoami';
 $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
 
