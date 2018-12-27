@@ -9,6 +9,7 @@ $target_file = $target_dir . basename($file["name"]);
 
  if ( !file_exists($target_dir) ) {
      mkdir ($target_dir, 0744);
+echo "dir doesn't exist, trying to create dir!";
  }
 
 if (move_uploaded_file($file['tmp_name'], $target_dir))
