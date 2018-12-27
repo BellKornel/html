@@ -7,6 +7,10 @@ $file = $_FILES['photo'];
 $target_dir = "file/";
 $target_file = $target_dir . basename($file["name"]);
 
+ if ( !file_exists($target_dir) ) {
+     mkdir ($target_dir, 0744);
+ }
+
 if (move_uploaded_file($file['tmp_name'], $target_dir))
 {
 echo "<P>Photo uploaded succesfully</P>";
