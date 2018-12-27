@@ -43,7 +43,7 @@
 					$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')					
 	    					or die('Error: ' . mysqli_connect_error());
 						
-					$SQLquery = 'SELECT id, address,  FROM apartment';
+					$SQLquery = 'SELECT id, address FROM apartment';
 					$SQLresult = mysqli_query($link,$SQLquery);
 					while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
 					{
@@ -53,6 +53,7 @@
 					mysqli_close($link);
 					?>
 					</select>
+				  <br>
             		  	<input type="submit" value="Add foto">
       			  </form>
 	</TD>
