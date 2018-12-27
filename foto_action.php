@@ -2,16 +2,10 @@
 $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
 
-if(is_uploaded_file($_FILES['uploadfile']['tmp_name']))
-{
-$newname=time();
-$i=pathinfo($_FILES['uploadfile']['name']);
-move_uploaded_file($_FILES['photo']['tmp_name'],"file/$newname");
-}
-else
-{
-echo "<P>File not uploaded!</P>";
-}
+$upload_image=$_FILES["photo"]["name"];
+$folder="/var/www/html/file/";
+move_uploaded_file($_FILES["photo"][" tmp_name "],"$folder".$_FILES[" myimage "][" name "]);
+
 
 $one = mysqli_real_escape_string($link, $_FILES['photo']['name']);
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
@@ -22,7 +16,7 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 	if($result[0] > $id) {$id = $result[0];}
 }
 $id = $id+1;
-$SQLquery = 'insert into foto values(' . $id . ', "' . $newname . '", ' . $two . ')';
+$SQLquery = 'insert into foto values(' . $id . ', "' . $_FILES[" myimage "][" name "] . '", ' . $two . ')';
 if (mysqli_query($link, $SQLquery))
 {
 	echo "<BR>New record created succesfully!";
