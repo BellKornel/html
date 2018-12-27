@@ -34,7 +34,7 @@
 	<a href="index.html"> <P>GO BACK</P></a>
 	 <TD>
 			  <P>Add new foto:</P>
-			  <form action="foto_action.php" method="post">
+			  <form action="foto_action.php" method="post" enctype='multipart/form-data'>
           		  	Foto: <input type="file" name="photo" accept="image/*">
           		  	<br>
 				Apartment: 
