@@ -34,7 +34,7 @@
 	 <TD>
 			  <P>Add new foto:</P>
 			  <form action="rent_action.php" method="post">
-				Ownert: 
+				Owner: 
 					<select name="owner">
 					<?php 
 					$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')					
@@ -51,7 +51,22 @@
 					?>
 					</select>
 				<br>
-          		  	Apartment: <input type="text" name="apartment">
+          		  	Apartment:
+					<select name="apartment">
+					<?php 
+					$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')					
+	    					or die('Error: ' . mysqli_connect_error());
+						
+					$SQLquery = 'SELECT id, address from apartment';
+					$SQLresult = mysqli_query($link,$SQLquery);
+					while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
+					{
+						printf('<option value=%d>%s</option>',$result[0],$result[1]);
+					}
+					mysqli_free_result($SQLresult);
+					mysqli_close($link);
+					?>
+					</select>
           		  	<br>
           		  	Payment per months: <input type="text" name="ppm">
           		  	<br>
