@@ -1,8 +1,8 @@
 <?php
 $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
-$one = mysqli_real_escape_string($link, $_POST['Foto']);
-$two = mysqli_real_escape_string($link, $_POST['Apartment']);
+$one = mysqli_real_escape_string($link, $_POST['foto']);
+$two = mysqli_real_escape_string($link, $_POST['apartment']);
 echo $one;
 echo $two;
 //$id = 0;
