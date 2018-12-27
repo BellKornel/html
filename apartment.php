@@ -8,7 +8,7 @@
 		$link = mysqli_connect('0.0.0.0', 'anton', '','DB')
 	    		or die('Error: ' . mysqli_connect_error());
 		printf('<P>Apartments</P> %s',"\n");
-		$SQLquery = 'select apartment.id, address, area, rooms, floor, description, commision, human.name from apartment inner join human on apartment.id_human = human.id';
+		$SQLquery = 'select apartment.id, address, area, rooms, floor, description, commision, CONCAT(human.name, \' \', human.family) from apartment inner join human on apartment.id_human = human.id';
 		$SQLresult = mysqli_query($link,$SQLquery);
 		printf('<table cellspacing=\' 0 \' border=\' 1 \'> %s',"\n");
 		printf('<TR> %s',"\n");
