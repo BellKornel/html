@@ -9,7 +9,7 @@
 		$link = mysqli_connect('0.0.0.0', 'anton', '','DB')
 	    		or die('Error: ' . mysqli_connect_error());
 		printf('<P>Rents</P> %s',"\n");
-		$SQLquery = 'select human.name, id_apartment, ppm, prepayment, rent_begin, rent_end from rent inner join human on id_human = human.id';
+		$SQLquery = 'select human.name, id_address, ppm, prepayment, rent_begin, rent_end from rent inner join human on id_human = human.id';
 		$SQLresult = mysqli_query($link,$SQLquery);
 		printf('<table cellspacing=\' 0 \' border=\' 1 \'> %s',"\n");
 		printf('<TR> %s',"\n");
@@ -32,7 +32,7 @@
 	?>
 		<a href="index.html"> <P>GO BACK</P> </a>
 	 <TD>
-			  <P>Add new foto:</P>
+			  <P>Add new rent:</P>
 			  <form action="rent_action.php" method="post">
 				Owner: 
 					<select name="owner">
