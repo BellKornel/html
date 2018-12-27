@@ -15,7 +15,7 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 	if($result[0] > $id) {$id = $result[0];}
 }
 $id = $id+1;
-$SQLquery = 'insert into apartment values(' . $id . ', "' . $one . '", ' . $two . ', "' . $three . '", ' . $four . ', "' . $five . '", ' . $six . '", "' . $seven .')';
+$SQLquery = 'insert into apartment values(' . $id . ', "' . $one . '", ' . $two . ', ' . $three . ', ' . $four . ', "' . $five . '", ' . $six . '", ' . $seven .')';
 if (mysqli_query($link, $SQLquery))
 {
 	echo "<BR>New record created succesfully!";
@@ -25,5 +25,5 @@ else
 	echo "<BR>Error: " . $sql . "<BR>" . mysqli_error($link);
 }
 mysqli_close($link);
-printf('<a href="foto.php"><P>Go back</P></a>');
+printf('<a href="apartment.php"><P>Go back</P></a>');
 ?>
