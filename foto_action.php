@@ -2,7 +2,7 @@
 $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
 
-$file = $_FILES['photo']
+$file = $_FILES['photo'];
 
 $path="file/".file['name'];
 if (copy($file['tmp_name'], $path))
