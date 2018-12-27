@@ -23,7 +23,7 @@
 	while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
 	{
 		printf('<TR>');
-		printf('<TD> %s </TD> <TD> %s </TD>',$result[1],$result[2]);
+		printf('<TD> <img src="file/%s"> </TD> <TD> %s </TD>',$result[1],$result[2]);
 		printf('</TR> %s',"\n");
 	}
 	printf('</table> %s',"\n");
