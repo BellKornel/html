@@ -1,9 +1,9 @@
 <?php
 $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
-$one = mysqli_real_escape_string($link, $_POST['foto']);
+$one = mysqli_real_escape_string($link, $_POST['foto']['tmp_name']);
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
-echo $one['uploadfile']['tmp_name'];
+echo $one;
 echo "<br>";
 //$id = 0;
 //$SQLresult = mysqli_query($link, 'select id from foto');
