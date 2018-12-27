@@ -53,7 +53,7 @@
 					?>
 					</select>
 				  <br>
-            		  	<input type="submit" value="Add foto">
+            		  	<input type="submit" value="Add requisit">
       			  </form>
 		</TD>
 	</body>
