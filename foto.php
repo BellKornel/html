@@ -35,7 +35,7 @@
 	 <TD>
 			  <P>Add new foto:</P>
 			  <form action="foto_action.php" method="post">
-          		  	Foto: <input type="text" name="foto">
+          		  	Foto: <input type="file" name="photo" accept="image/*">
           		  	<br>
 				Apartment: 
 					<select name="apartment">
