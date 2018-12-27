@@ -3,7 +3,7 @@ $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
 
 $file = $_FILES['photo'];
-$filename = date('His');
+$filename = date('Y_m_d_H_i_s');
 $target_dir = "file/";
 $target_file = $target_dir . $filename;
 
