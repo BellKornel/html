@@ -16,8 +16,6 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 }
 $id = $id+1;
 $SQLquery = 'insert into apartment values(' . $id . ', "' . $one . '", ' . $two . ', ' . $three . ', ' . $four . ', "' . $five . '", ' . $six . ', ' . $seven . ')';
-echo $SQLquery;
-echo "<BR>";
 if (mysqli_query($link, $SQLquery))
 {
 	echo "<BR>New record created succesfully!";
