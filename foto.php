@@ -33,7 +33,7 @@
 	?>
 	<a href="index.html"> <P>GO BACK</P></a>
 	 <TD>
-			  <P>Add New Book:</P>
+			  <P>Add new foto:</P>
 			  <form action="foto_action.php" method="post">
           		  	Foto: <input type="text" name="foto">
           		  	<br>
