@@ -17,7 +17,7 @@ echo "<P>Photo uploaded succesfully</P>";
 }
 else
 {
-echo "tmp_name: " . $file["tmp_name"] . "<br>name: " . $file["name"] . "<br>folder: " . $target_dir . "<br>";
+echo "tmp_name: " . $file["tmp_name"] . "<br>name: " . $file["name"] . "<br>folder with file name: " . $target_file . "<br>";
 echo "<P>Error on file loading: " . $file["error"] . "</P>";
 }
 
