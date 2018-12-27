@@ -44,7 +44,7 @@
           		  	<br>
           		  	Description: <input type="text" name="description">
           		  	<br>
-          		  	Commision: <input type="text" name="commsision">
+          		  	Commision: <input type="text" name="commision">
           		  	<br>
 				Owner: 
 					<select name="owner">
