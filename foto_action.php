@@ -4,7 +4,7 @@ $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 
 $file = $_FILES['photo'];
 $target_dir = "file/";
-$target_file = $target_dir . basename($file["name"]);
+$target_file = $target_dir . $file["name"];
 
  if ( !file_exists($target_dir) ) {
      mkdir ($target_dir, 0744);
@@ -17,7 +17,7 @@ echo "<P>Photo uploaded succesfully</P>";
 }
 else
 {
-echo "tmp_name: " . $file["tmp_name"] . "<br>name: " . basename($file["name"]) . "<br>";
+echo "tmp_name: " . $file["tmp_name"] . "<br>name: " . $file["name"] . "<br>";
 echo "<P>Error on file loading: " . $file["error"] . "</P>";
 }
 
