@@ -22,5 +22,5 @@ else
 	echo "<BR>Error: " . $sql . "<BR>" . mysqli_error($link);
 }
 mysqli_close($link);
-printf('<a href="foto.php"><P>Go back</P></a>');
+printf('<a href="requisites.php"><P>Go back</P></a>');
 ?>
