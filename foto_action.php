@@ -4,7 +4,7 @@ $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 
 $upload_image=$_FILES["photo"]["name"];
 $folder="/var/www/html/file/";
-move_uploaded_file($_FILES["photo"][" tmp_name "],"$folder".$_FILES[" myimage "][" name "]);
+move_uploaded_file($_FILES["photo"]["tmp_name"],"$folder".$_FILES[" myimage "]["name"]);
 
 
 $one = mysqli_real_escape_string($link, $_FILES['photo']['name']);
@@ -16,7 +16,7 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 	if($result[0] > $id) {$id = $result[0];}
 }
 $id = $id+1;
-$SQLquery = 'insert into foto values(' . $id . ', "' . $_FILES[" myimage "][" name "] . '", ' . $two . ')';
+$SQLquery = 'insert into foto values(' . $id . ', "' . $one . '", ' . $two . ')';
 if (mysqli_query($link, $SQLquery))
 {
 	echo "<BR>New record created succesfully!";
