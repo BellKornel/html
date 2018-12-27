@@ -6,9 +6,13 @@ $file = $_FILES['photo'];
 
 $path="file/".file['name'];
 if (copy($file['tmp_name'], $path))
+{
 echo "<P>Photo uploaded succesfully</P>";
+}
 else
+{
 echo "<P>Error on file loading: " . $_FILES["photo"]["error"] . "</P>";
+}
 
 $id = 0;
 $SQLresult = mysqli_query($link, 'select id from foto');
