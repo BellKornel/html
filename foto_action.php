@@ -2,10 +2,11 @@
 $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
 
-$upload_image=$_FILES["photo"]["name"];
-$folder="/var/www/html/file/";
-move_uploaded_file($_FILES["photo"]["tmp_name"],"$folder".$_FILES[" myimage "]["name"]);
-
+$path="/var/www/html/file/";
+if (!@copy($_FILES['photo']['tmp_name'], $path . $_FILES['photo']['name']))
+echo "<P>Error on file loading]</P>";
+else
+echo "<P>Photo uploaded succesfully</P>";
 
 $one = mysqli_real_escape_string($link, $_FILES['photo']['name']);
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
