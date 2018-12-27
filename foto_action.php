@@ -2,9 +2,16 @@
 $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
 
+if(is_uploaded_file($_FILES['uploadfile']['tmp_name']))
+{
 $newname=time();
 $i=pathinfo($_FILES['uploadfile']['name']);
 move_uploaded_file($_FILES['photo']['tmp_name'],"file/$newname.{$i['extension']}");
+}
+else
+{
+echo "<P>File not uploaded!</P>";
+}
 
 $one = mysqli_real_escape_string($link, $_FILES['photo']['name']);
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
