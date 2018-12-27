@@ -12,7 +12,7 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 	if($result[0] > $id) {$id = $result[0];}
 }
 $id = $id+1;
-$SQLquery = 'insert into foto values(' . $id . ', ' . $one . ', ' . $two . ', ' . $three . ', ' . $four . ')';
+$SQLquery = 'insert into requisites values(' . $id . ', ' . $one . ', ' . $two . ', ' . $three . ', ' . $four . ')';
 echo $SQLquery;
 echo "<br>";
 if (mysqli_query($link, $SQLquery))
