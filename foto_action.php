@@ -2,8 +2,10 @@
 $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
 
-$path="file/";
-if (move_uploaded_file($_FILES['photo']['tmp_name'], $path))
+$file = $_FILES['photo']
+
+$path="file/".file['name'];
+if (copy($file['tmp_name'], $path))
 echo "<P>Photo uploaded succesfully</P>";
 else
 echo "<P>Error on file loading: " . $_FILES["photo"]["error"] . "</P>";
