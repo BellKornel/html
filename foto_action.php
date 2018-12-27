@@ -3,7 +3,7 @@ $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 	or die('Error: ' . mysqli_connect_error());
 
 $file = $_FILES['photo'];
-
+echo $file . "<br>";
 $target_dir = "file/";
 $target_file = $target_dir . basename($file["name"]);
 
