@@ -4,7 +4,7 @@ $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 $one = mysqli_real_escape_string($link, $_POST['foto']);
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
 echo $one;
-echo "<br>"
+echo "<br>";
 //$id = 0;
 //$SQLresult = mysqli_query($link, 'select id from foto');
 //while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
