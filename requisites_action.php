@@ -13,8 +13,6 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 }
 $id = $id+1;
 $SQLquery = 'insert into requisites values(' . $id . ', ' . $one . ', ' . $two . ', ' . $three . ', ' . $four . ')';
-echo $SQLquery;
-echo "<br>";
 if (mysqli_query($link, $SQLquery))
 {
 	echo "<BR>New record created succesfully!";
