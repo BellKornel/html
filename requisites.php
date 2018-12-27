@@ -33,9 +33,9 @@
 			  <form action="requisites_action.php" method="post">
           		  	BIC: <input type="text" name="bic">
           		  	<br>
-          		  	ba: <input type="text" name="ba">
+          		  	Bank account: <input type="text" name="ba">
           		  	<br>
-          		  	iba: <input type="text" name="iba">
+          		  	ID Bank account: <input type="text" name="iba">
           		  	<br>
 				Owner: 
 					<select name="owner">
