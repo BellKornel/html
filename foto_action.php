@@ -9,11 +9,11 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 	if($result[0] > $id) {$id = $result[0];}
 }
 $id = $id+1;
-$path="/var/www/html/file/";
-if (move_uploaded_file($_FILES['photo']['tmp_name'], $path . $id))
+$path="file/" . $id;
+if (move_uploaded_file($_FILES['photo']['tmp_name'], $path))
 echo "<P>Photo uploaded succesfully</P>";
 else
-echo "<P>Error on file loading</P>";
+echo "<P>Error on file loading: " . $_FILES["photo"]["error"] . "</P>";
 
 $one = mysqli_real_escape_string($link, $_FILES['photo']['name']);
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
