@@ -28,5 +28,33 @@
 		mysqli_close($link);
 	?>
 		<a href="index.html"> <P>GO BACK</P> </a>
+		<TD>
+			  <P>Add new requisit:</P>
+			  <form action="requisites_action.php" method="post">
+          		  	BIC: <input type="text" name="bic">
+          		  	<br>
+          		  	ba: <input type="text" name="ba">
+          		  	<br>
+          		  	iba: <input type="text" name="iba">
+          		  	<br>
+				Owner: 
+					<select name="owner">
+					<?php 
+					$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')					
+	    					or die('Error: ' . mysqli_connect_error());
+					$SQLquery = 'SELECT id, CONCAT(name, \' \', family) from human';
+					$SQLresult = mysqli_query($link,$SQLquery);
+					while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
+					{
+						printf('<option value=%d>%s</option>',$result[0],$result[1]);
+					}
+					mysqli_free_result($SQLresult);
+					mysqli_close($link);
+					?>
+					</select>
+				  <br>
+            		  	<input type="submit" value="Add foto">
+      			  </form>
+		</TD>
 	</body>
 </html>
