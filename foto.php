@@ -10,7 +10,7 @@
 	$link = mysqli_connect('0.0.0.0', 'anton', '','DB')
 	    or die('Error: ' . mysqli_connect_error());
 
-	$SQLquery = 'SELECT * FROM foto';
+	$SQLquery = 'SELECT foto.id, foto, apartment.address FROM foto inner join apartment on foto.id = apartment.id';
 	$SQLresult = mysqli_query($link,$SQLquery);
 
 	printf('<table cellspacing=\' 0 \' border=\' 1 \'> %s',"\n");
