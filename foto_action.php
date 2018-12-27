@@ -4,7 +4,7 @@ $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 
 $file = $_FILES['photo'];
 
-$target_dir = "file/";
+$target_dir = "/html/file/";
 $target_file = $target_dir . basename($file["name"]);
 
  if ( !file_exists($target_dir) ) {
