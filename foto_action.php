@@ -6,7 +6,7 @@ if(is_uploaded_file($_FILES['uploadfile']['tmp_name']))
 {
 $newname=time();
 $i=pathinfo($_FILES['uploadfile']['name']);
-move_uploaded_file($_FILES['photo']['tmp_name'],"file/$newname.{$i['extension']}");
+move_uploaded_file($_FILES['photo']['tmp_name'],"file/$newname");
 }
 else
 {
