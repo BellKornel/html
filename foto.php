@@ -34,7 +34,7 @@
 	<a href="index.html"> <P>GO BACK</P></a>
 	 <TD>
 			  <P>Add New Book:</P>
-			  <form action="kvartiri_form_action.php" method="post">
+			  <form action="foto_action.php" method="post">
           		  	Foto: <input type="text" name="foto">
           		  	<br>
 				Apartment: 
