@@ -9,7 +9,7 @@
 		$link = mysqli_connect('0.0.0.0', 'anton', '','DB')
 	    		or die('Error: ' . mysqli_connect_error());
 		printf('<P>Rents</P> %s',"\n");
-		$SQLquery = 'select human.name, apartment.address, ppm, prepayment, rent_begin, rent_end from rent inner join human on id_human = human.id inner join apartment on apartment.id = rent.id_apartment';
+		$SQLquery = 'select CONCAT(human.name, \' \', human.family), apartment.address, ppm, prepayment, rent_begin, rent_end from rent inner join human on id_human = human.id inner join apartment on apartment.id = rent.id_apartment';
 		$SQLresult = mysqli_query($link,$SQLquery);
 		printf('<table cellspacing=\' 0 \' border=\' 1 \'> %s',"\n");
 		printf('<TR> %s',"\n");
