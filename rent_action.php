@@ -1,0 +1,28 @@
+<?php
+$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
+	or die('Error: ' . mysqli_connect_error());
+$one = mysqli_real_escape_string($link, $_POST['owner']);
+$two = mysqli_real_escape_string($link, $_POST['apartment']);
+$three = mysqli_real_escape_string($link, $_POST['ppm']);
+$four = mysqli_real_escape_string($link, $_POST['prepayment']);
+$five = mysqli_real_escape_string($link, $_POST['begin']);
+$six = mysqli_real_escape_string($link, $_POST['end']);
+$id = 0;
+$SQLresult = mysqli_query($link, 'select id from rent');
+while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
+{
+	if($result[0] > $id) {$id = $result[0];}
+}
+$id = $id+1;
+$SQLquery = 'insert into rent values(' . $id . ', ' . $one . ', ' . $two . ', ' . $three . ', ' . $four . ', "' . $five . '", "' . $six . '")';
+if (mysqli_query($link, $SQLquery))
+{
+	echo "<BR>New record created succesfully!";
+}
+else
+{
+	echo "<BR>Error: " . $sql . "<BR>" . mysqli_error($link);
+}
+mysqli_close($link);
+printf('<a href="rent.php"><P>Go back</P></a>');
+?>
