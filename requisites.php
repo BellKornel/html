@@ -8,7 +8,7 @@
 		$link = mysqli_connect('0.0.0.0', 'anton', '','DB')
 	    		or die('Error: ' . mysqli_connect_error());
 		printf('<P>Requisites</P> %s',"\n");
-		$SQLquery = 'select requisites.id, BIC, bank_account, id_bank_account, human.name from requisites inner join human on requisites.human = human.id';
+		$SQLquery = 'select requisites.id, BIC, bank_account, id_bank_account, CONCAT(human.name, \' \', human.family) from requisites inner join human on requisites.human = human.id';
 		$SQLresult = mysqli_query($link,$SQLquery);
 		printf('<table cellspacing=\' 0 \' border=\' 1 \'> %s',"\n");
 		printf('<TR> %s',"\n");
