@@ -5,6 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	 <body>
+	<center>
 		<?php
 		$link = mysqli_connect('0.0.0.0', 'anton', '','DB')
 	    		or die('Error: ' . mysqli_connect_error());
@@ -79,5 +80,6 @@
             		  	<input type="submit" value="Add rent">
       			  </form>
 	</TD>
+	</center>
 	</body>
 </html>
