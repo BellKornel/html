@@ -3,6 +3,7 @@
 	<title>WEB-site of the Alekseev Nikta's and Savvin Anton's website rieltors</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
+	<center>
 	 <body>
 		<?php
 		$link = mysqli_connect('0.0.0.0', 'anton', '','DB')
@@ -66,5 +67,6 @@
             		  	<input type="submit" value="Add apartment">
       			  </form>
 		</TD>
+	</center>
 	</body>
 </html>
