@@ -4,6 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	<body>
+	<center>
 		<?php
 			printf('<P style="font-size:18">Our site located on aws.amazon.com, and we use Ubuntu Server 18.04 LTS (HVM), SSD Volume Type AMI.</P> %s',"\n");
 			$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
@@ -27,5 +28,6 @@
 			mysqli_close($link);
 		?>
 		<a href="index.html"> <P>GO BACK</P> </a>
+	</center>
 	</body>
 </html>
