@@ -4,6 +4,7 @@
 		<meta http-equiv="Content-Type", content="text/html; charset=utf-8">
 	</head>
 	<body>
+	<center>
 	<?php
 		printf('<P style="font-size:18">Humans</P> %s', "\n");
 		$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
@@ -42,5 +43,6 @@
 			<input type="submit" value="Add human">
 		</form>
 	</TD>
+	</center>
 	</body>
 </html>
