@@ -12,7 +12,7 @@ $target_file = $target_dir . $filename;
 echo "dir doesn't exist, trying to create dir!";
  }
 
-if (move_uploaded_file($filename, $target_dir))
+if (move_uploaded_file($filename, $target_file))
 {
 echo "<P>Photo uploaded succesfully</P>";
 }
@@ -32,7 +32,7 @@ $id = $id+1;
 $one = mysqli_real_escape_string($link, $file['name']);
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
 $SQLquery = 'insert into foto values(' . $id . ', "' . $one . '", ' . $two . ')';
-if (move_uploaded_file($file['tmp_name'], $target_dir))
+if (move_uploaded_file($file['tmp_name'], $target_file))
 {
 if (mysqli_query($link, $SQLquery))
 {
