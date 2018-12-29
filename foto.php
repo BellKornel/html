@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  </head>
  <body>
+	<center>
 	<?php
 	printf('<P>Fotos</P> %s',"\n");
 
@@ -57,5 +58,6 @@
             		  	<input type="submit" value="Add foto">
       			  </form>
 	</TD>
+	</center>
  </body>
 </html>
