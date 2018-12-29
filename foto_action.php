@@ -1,6 +1,5 @@
 <?php
-$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
-	or die('Error: ' . mysqli_connect_error());
+$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB') or die('Error: ' . mysqli_connect_error());
 
 $file = $_FILES['photo'];
 $filename = date('Y_m_d_H_i_s');
@@ -20,13 +19,16 @@ $target_file = $target_dir . $filename;
 //{
 //echo "tmp_name: " . $file["tmp_name"] . "<br>name: " . $filename . "<br>folder with file name: " . $target_file . "<br>";
 //echo "<P>Error on file loading: " . $file["error"] . "</P>";
-/}
+//}
 
 $id = 0;
 $SQLresult = mysqli_query($link, 'select id from foto');
 while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 {
-	if($result[0] > $id) {$id = $result[0];}
+	if($result[0] > $id)
+	{
+		$id = $result[0];
+	}
 }
 
 $id = $id+1;
