@@ -4,7 +4,8 @@ $link = mysqli_connect('0.0.0.0', 'anton', '', 'DB')
 
 $file = $_FILES['photo'];
 $fliename = date('Y_m_d_H_i_s');
-$target_file = "file/" . $filename;
+$target_dir = "file/";
+$target_file = $target_dir . $filename;
 
  //if ( !file_exists($target_dir) ) {
 //     mkdir ($target_dir, 0744);
@@ -27,20 +28,25 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 {
 	if($result[0] > $id) {$id = $result[0];}
 }
+
 $id = $id+1;
-$one = $filename;
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
-$SQLquery = 'insert into foto values(' . $id . ', "' . $one . '", ' . $two . ')';
+$SQLquery = 'insert into foto values(' . $id . ', "' . $filename . '", ' . $two . ')';
+
 if (move_uploaded_file($file['tmp_name'], $target_file))
 {
-if (mysqli_query($link, $SQLquery))
-{
-	echo "<BR>New record created succesfully!";
+	if (mysqli_query($link, $SQLquery))
+	{
+		echo "<BR>New record created succesfully!";
+	}
+	else
+	{
+		echo "<BR>Error: " . $sql . "<BR>" . mysqli_error($link);
+	}
 }
 else
 {
-	echo "<BR>Error: " . $sql . "<BR>" . mysqli_error($link);
-}
+	echo "<P>Error on file loading: " . $file["error"] . "</P>";
 }
 mysqli_close($link);
 printf('<a href="foto.php"><P>Go back</P></a>');
