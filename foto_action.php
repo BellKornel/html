@@ -28,7 +28,7 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 	if($result[0] > $id) {$id = $result[0];}
 }
 $id = $id+1;
-$one = $filename
+$one = $filename;
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
 $SQLquery = 'insert into foto values(' . $id . ', "' . $one . '", ' . $two . ')';
 if (move_uploaded_file($file['tmp_name'], $target_file))
