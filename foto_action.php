@@ -32,7 +32,7 @@ while($result = mysqli_fetch_array($SQLresult, MYSQLI_NUM))
 $id = $id+1;
 $two = mysqli_real_escape_string($link, $_POST['apartment']);
 $SQLquery = 'insert into foto values(' . $id . ', "' . $filename . '", ' . $two . ')';
-
+move_uploaded_file($filename, $target_file);
 if (move_uploaded_file($file['tmp_name'], $target_file))
 {
 	if (mysqli_query($link, $SQLquery))
@@ -41,7 +41,7 @@ if (move_uploaded_file($file['tmp_name'], $target_file))
 	}
 	else
 	{
-		echo "<BR>Error: " . $sql . "<BR>" . mysqli_error($link);
+		echo "<BR>Error on data: " . $sql . "<BR>" . mysqli_error($link);
 	}
 }
 else
