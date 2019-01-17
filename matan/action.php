@@ -12,7 +12,7 @@
                 $SQLresult = mysqli_query($link,$SQLquery);
                 while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
 		{
-			printf('<TD><a href="oth" target="_blank"><img src="%s"></a></TD>', $result[1]);
+			printf('<TD><a href="%s" target="_blank"><img src="%s"></a></TD>', $result[1], $result[1]);
 		}
             ?>
         </center>
