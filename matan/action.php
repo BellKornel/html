@@ -3,5 +3,5 @@
 	$one = mysqli_real_escape_string($link, $_POST['matan']);
 	$SQLquery = 'select id, foto from matan where id == '.$one;
 	$SQLresult = mysqli_query($link,$SQLquery);
-	echo $SQLresult;
+	echo '<BR>You idiot!'.$SQLresult;
 ?>
