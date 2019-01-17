@@ -8,8 +8,8 @@
 		<P style="color:black; font-size:18">
 			БЛОК 2
 		</P>
-		Apartment: 
-			<select name="apartment">
+		matan: 
+			<select name="matan">
 				<?php 
 					$link = mysqli_connect('0.0.0.0', 'anton', '', 'DB') or die('Error: ' . mysqli_connect_error());
 					$SQLquery = 'SELECT * FROM matan';
