@@ -5,6 +5,7 @@
 	$SQLresult = mysqli_query($link,$SQLquery);
 	while ($result = mysqli_fetch_array($SQLresult,MYSQLI_NUM))
 	{
+		echo $result;
 		echo '<a href="'.$result[1].'" target="_blank"><img src="'.$result[1].'"></a>';
 	}
 ?>
